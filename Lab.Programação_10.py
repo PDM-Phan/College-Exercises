@@ -1,22 +1,3 @@
-def verificacao(string):
-    """
-    Cria uma variavel VERIFICA que receberá um int input.
-    :param string: será uma pergunta que necessite de um tratamento de um número.
-    :return: retorna a varival VERIFICA
-    """
-    while True:
-        try:
-            verifica = int(input(string))
-
-        except ValueError:
-            print('Digite um número válido.')
-            print('Tente novamente.')
-            continue
-
-        else:
-            return verifica
-
-
 def encontra_primos(numero):
     """
     Função que recebe um param número e verifica se é primo ou não.
@@ -36,3 +17,29 @@ def encontra_primos(numero):
             else:  # houve mais de duas divisoes, sendo assim um número não primo.
                 break
         return True if divisao_possivel == 2 else False
+
+
+lista_primos = []
+lista_par = []
+lista_multiplos_n = []
+
+inicio_intervalo = int(input())
+fim_intervalo = int(input())
+while True:
+    n = int(input())  # variavel que precisa ser obrigatoriamente impar
+    if n % 2 == 0:
+        continue
+    else:
+        break
+
+for num in range(inicio_intervalo, fim_intervalo):
+    if encontra_primos(num):
+        lista_primos.append(num)
+    if num % 2 == 0:
+        lista_par.append(num)
+    if num % n == 0:
+        lista_multiplos_n.append(num)
+
+print(lista_primos)
+print(lista_par)
+print(lista_multiplos_n)
